@@ -12,16 +12,16 @@ def get_user_input():
     st.write("Answer the following 10 questions to predict the likelihood of mental health issues.")
 
     questions = [
-        "Does the child often feel sad or anxious?",
-        "Has the child experienced any traumatic events?",
-        "Does the child have difficulty concentrating?",
-        "Is the child frequently irritable or angry?",
-        "Does the child have trouble sleeping?",
-        "Has the child shown changes in appetite or weight?",
-        "Is the child socially withdrawn or isolated?",
-        "Does the child engage in risky behaviors?",
-        "Is the child having difficulty in school?",
-        "Has the child talked about self-harm or suicide?"
+        "Is the child experiencing changes in sleep patterns?",
+        "Does the child show interest in activities they used to enjoy?",
+        "Is the child having difficulty concentrating in school?",
+        "Has the child exhibited changes in appetite or weight?",
+        "Does the child frequently express feelings of sadness or hopelessness?",
+        "Is the child having trouble making and maintaining friendships?",
+        "Has the child engaged in self-harming behaviors?",
+        "Does the child often complain of physical symptoms without a medical cause?",
+        "Is there a noticeable decline in academic performance?",
+        "Has the child experienced any traumatic events recently?"
     ]
 
     user_answers = []
@@ -43,7 +43,7 @@ prediction_label = 'Yes' if prediction == 2 else 'No' if prediction == 1 else 'M
 # Display the prediction
 st.subheader("Prediction:")
 # st.write(f"The model predicts that the child's mental health status is: {prediction_label}")
-mental_health = "has good mental health status" if prediction_label == "No" else "has bad mental health status. So consult a good psychologist" if prediction_label == "Yes" else "require more diagnosis"
+mental_health = "has good mental health status" if prediction_label == "No" else "has bad mental health status. So please consult a good psychologist" if prediction_label == "Yes" else "require more diagnosis"
 st.write(f"Your child {mental_health}...")
 
 # Optionally, you can display the probability scores for each class
