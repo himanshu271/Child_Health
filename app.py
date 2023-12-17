@@ -42,10 +42,12 @@ prediction_label = 'Yes' if prediction == 2 else 'No' if prediction == 1 else 'M
 
 # Display the prediction
 st.subheader("Prediction:")
-st.write(f"The model predicts that the child's mental health status is: {prediction_label}")
+# st.write(f"The model predicts that the child's mental health status is: {prediction_label}")
+mental_health = "has good mental health status" if prediction_label == "No" else "has bad mental health status. So consult a good psychologist" if prediction_label == "Yes" else "require more diagnosis"
+st.write(f"Your child {mental_health}...")
 
 # Optionally, you can display the probability scores for each class
-prediction_probabilities = loaded_rf_model.predict_proba(user_input_df)[0]
+# prediction_probabilities = loaded_rf_model.predict_proba(user_input_df)[0]
 
 
 
